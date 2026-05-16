@@ -1,0 +1,67 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+datasource db {
+  provider = "mysql"
+}
+
+model User {
+  id        Int       @id @default(autoincrement())
+  name      String
+  email     String    @unique
+  password  String
+
+  symptoms  Symptom[]
+  posts     Post[]
+  comments  Comment[]
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+model Symptom {
+  id             Int      @id @default(autoincrement())
+
+  painLevel      Int
+  fatigueLevel   Int
+  sleepQuality   Int
+
+  mood           String
+  notes          String?
+
+  userId         Int
+  user           User     @relation(fields: [userId], references: [id])
+
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model Post {
+  id             Int      @id @default(autoincrement())
+
+  content        String   @db.Text
+
+  userId         Int
+  user           User     @relation(fields: [userId], references: [id])
+
+  comments       Comment[]
+
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model Comment {
+  id             Int      @id @default(autoincrement())
+
+  content        String   @db.Text
+
+  postId         Int
+  post           Post     @relation(fields: [postId], references: [id])
+
+  userId         Int
+  user           User     @relation(fields: [userId], references: [id])
+
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
