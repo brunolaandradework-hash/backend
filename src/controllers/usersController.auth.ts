@@ -1,6 +1,6 @@
 import { Response, Request } from "express";
 import { createUserSchema, loginUserSchema } from "../types/auth.schema";
-import { registerUser, loginUser, getInfoUser } from "../services/usersAuth";
+import { registerUser, loginUser, getInfoUser } from "../services/usersAuthService";
 import { ZodError } from "zod";
 
 const register = async (req: Request, res: Response) => {
