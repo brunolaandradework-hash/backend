@@ -68,7 +68,7 @@ export const listSymptom = async (req: Request, res: Response) => {
   }
 };
 
-export const getSymptomById = async (req: Request, res: Response) => {
+export const SymptomById = async (req: Request, res: Response) => {
   try {
     const userId = Number(req.user_id);
     const symptomId = Number(req.params.id);
