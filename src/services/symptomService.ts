@@ -26,7 +26,7 @@ export const createSymp = async ({
   endOfDay.setHours(23, 59, 59, 999);
 
   const symptomAlreadyExists = await prisma.symptom.findFirst({
-    where: {
+   where: {
       userId,
       createdAt: {
         gte: startOfDay,
@@ -51,7 +51,7 @@ export const createSymp = async ({
   });
 
   return symptom;
-};
+}; 
 
 export const getSymp = async (userId: number) => {
   const symptoms = await prisma.symptom.findMany({

@@ -1,0 +1,20 @@
+export const stopWords = [
+  "a", "o", "as", "os", "um", "uma", "uns", "umas",
+  "de", "do", "da", "dos", "das",
+  "em", "no", "na", "nos", "nas",
+  "com", "sem", "por", "para", "pra", "pro", "pela", "pelo", "pelos", "pelas",
+  "e", "ou", "mas", "entao", "tambem", "porque", "pois",
+  "que", "quem", "quando", "onde", "como", "qual", "quais",
+  "foi", "sou", "estou", "estava", "estive", "estao", "estar",
+  "tive", "tenho", "teve", "tem", "ter",
+  "me", "meu", "minha", "meus", "minhas",
+  "se", "sua", "seu", "suas", "seus",
+  "isso", "essa", "esse", "esta", "este", "aquela", "aquele",
+  "muito", "muita", "muitos", "muitas", "mais", "menos", "pouco", "pouca",
+  "hoje", "ontem", "amanha", "dia", "dias", "noite", "manha", "tarde",
+  "durante", "depois", "antes", "agora",
+  "senti", "sentir", "sentindo", "sentia",
+  "fiquei", "ficou", "ficar", "tive", "estava",
+  "bem", "mal", "normal",
+  "um pouco", "bastante"
+];

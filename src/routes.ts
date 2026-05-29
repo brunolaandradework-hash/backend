@@ -19,6 +19,7 @@ import {
   deleteComment,
   listComments,
 } from "./controllers/commentController";
+import { monthlySymptomsReport } from "./controllers/reportController";
 
 const router = Router();
 
@@ -41,4 +42,5 @@ router.post("/posts/:postId/comments", isAuthenticated, createComment);
 router.get("/posts/:postId/comments", isAuthenticated, listComments);
 router.delete("/comments/:id", isAuthenticated, deleteComment);
 
+router.get("/reports/symptoms/monthly", isAuthenticated, monthlySymptomsReport);
 export default router;
