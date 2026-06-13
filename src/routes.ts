@@ -27,6 +27,7 @@ router.post("/auth/register", register);
 router.post("/auth/login", login);
 router.get("/auth/me", isAuthenticated, info);
 
+
 router.post("/symptoms", isAuthenticated, createSymptom);
 router.get("/symptoms", isAuthenticated, listSymptom);
 router.get("/symptoms/:id", isAuthenticated, SymptomById);
